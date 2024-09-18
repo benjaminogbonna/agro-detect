@@ -1,1 +1,1 @@
-# Agro Detect: Plant Disease Identification
+# Agro Detect: Plant Disease Detection using CNNs
