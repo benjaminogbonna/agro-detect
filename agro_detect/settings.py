@@ -18,7 +18,9 @@ SECRET_KEY = "django-insecure-pzp$oqpjld*bhhjfuzg!4ee=e!@%*8fb(x&kfepx4bb%=t_4l@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'agro-detect-dev.us-west-2.elasticbeanstalk.com/'
+]
 
 
 # Application definition
@@ -31,6 +33,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'bootstrap4',
+    'pwa',
 
     'rest_framework',
     'main'
@@ -108,6 +111,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
 
 # To serve media files uploaded by users
 MEDIA_URL = '/media/'
@@ -117,3 +121,37 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# for PWA
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'static/js', 'serviceworker.js')
+
+PWA_APP_NAME = 'Agro Detect'
+PWA_APP_DESCRIPTION = "Agro Detect PWA"
+PWA_APP_THEME_COLOR = 'black'
+PWA_APP_BACKGROUND_COLOR = '#ffffff'
+PWA_APP_DISPLAY = 'standalone'
+PWA_APP_SCOPE = '/'
+PWA_APP_ORIENTATION = 'any'
+PWA_APP_START_URL = '/'
+PWA_APP_STATUS_BAR_COLOR = 'default'
+PWA_APP_ICONS = [
+    {
+        'src': 'static/images/ad_logo.jpg',
+        'sizes': '160x160'
+    }
+]
+PWA_APP_ICONS_APPLE = [
+    {
+        'src': 'static/images/ad_logo.jpg',
+        'sizes': '160x160'
+    }
+]
+PWA_APP_SPLASH_SCREEN = [
+    {
+        'src': 'static/images/ad_logo.jpg',
+        'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
+    }
+]
+PWA_APP_DIR = 'ltr'
+PWA_APP_LANG = 'en-US'
