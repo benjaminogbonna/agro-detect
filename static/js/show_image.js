@@ -16,7 +16,7 @@ function readURL(input){
       var reader = new FileReader();
       reader.onload = (function(thisFile){
           return function(e){
-              document.getElementById('list').innerHTML = ['<img src="', e.target.result, '"title="', thisFile.name, '" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />'].join('')
+              document.getElementById('list').innerHTML = ['<img src="', e.target.result, '"title="', thisFile.name, '" class="img-fluid" style="border-radius: 10px; height:250px; width:auto;" />'].join('')
           };
       })(f);
       reader.readAsDataURL(f)

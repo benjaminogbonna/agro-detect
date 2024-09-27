@@ -6,8 +6,8 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('c', views.camera, name='c'),
     path('anthracnose', views.anthracnose, name='anthracnose'),
-    path('cercospora_leaf_spot', views.cls, name='cls'),
-    path('phosphorus_deficiency', views.pd, name='pd'),
+    path('cercospora-leaf-spot', views.cls, name='cls'),
+    path('phosphorus-deficiency', views.pd, name='pd'),
 
-    path('prediction/', views.prediction),
+    path('api/prediction/', views.prediction),
 ]

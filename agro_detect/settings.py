@@ -19,7 +19,8 @@ SECRET_KEY = "django-insecure-pzp$oqpjld*bhhjfuzg!4ee=e!@%*8fb(x&kfepx4bb%=t_4l@
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'agro-detect-dev.us-west-2.elasticbeanstalk.com/'
+    '127.0.0.1',
+    'agro-detect-dev.us-west-2.elasticbeanstalk.com'
 ]
 
 
