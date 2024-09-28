@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 {% load static %}
-
 {% load bootstrap4 %}
 
 <html lang="en">
+{% load pwa %}
+{% progressive_web_app_meta %}
+<link rel="manifest" href="manifest.json">
 <head>
     <meta charset="UTF-8">
      <title>{% block title %}{% endblock %}</title>

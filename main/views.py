@@ -1,5 +1,7 @@
 from django.shortcuts import render
 import os
+from io import BytesIO
+from PIL import Image
 from django.core.files.storage import default_storage
 import tensorflow as tf
 
@@ -55,10 +57,11 @@ def prediction(request):
     file_url = default_storage.path(file_name)
     try:
         pred, prob = load_and_pred(model, file_url, class_names)
-        disease_prediction = DiseaseDetection.objects.create(image=file_url,
-                                                             prediction=plant_names[pred],
-                                                             prob=prob)
-        disease_prediction.save()
+        # disease_prediction = DiseaseDetection.objects.create(image=file_url,
+        #                                                      prediction=plant_names[pred],
+        #                                                      prob=prob)
+        # disease_prediction.save()
+        # os.remove(file_name)
         return Response({'pred': pred,
                          'prob': prob,
                          'result': plant_names[pred],
