@@ -1,7 +1,5 @@
 from django.shortcuts import render
 import os
-from io import BytesIO
-from PIL import Image
 from django.core.files.storage import default_storage
 import tensorflow as tf
 
@@ -14,8 +12,8 @@ from .helper_function import load_and_pred
 
 cur_dir = os.path.dirname(__file__)
 model = tf.keras.models.load_model(os.path.join(cur_dir, 'model', 'model_0.h5'))
+# model = tf.keras.models.load_model('https://agro-detect.s3.us-west-2.amazonaws.com/model_0.h5')
 
-# Create your views here.
 
 class_names = ['anthracnose', 'cercospora_leaf_spot', 'phosphorus_deficiency']
 plant_names = {
