@@ -7,10 +7,10 @@ LABEL maintainer="Benjamin"
 ENV PYTHONUNBUFFERED 1
 
 # Set the working directory in the container
-WORKDIR /app
+WORKDIR /agro_detect
 
 # Copy the current directory contents into the container at /app
-COPY . /app
+COPY . /agro_detect
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --upgrade pip
